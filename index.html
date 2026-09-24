@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Luxury Game Launcher</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">LUX<span>PLAY</span></div>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#games">Games</a>
+        </nav>
+    </header>
+
+    <main>
+
+       <section id="games" class="games-section">
+
+    <div class="section-title">
+        <p>COLLECTION</p>
+        <h2>Featured Games</h2>
+    </div>
+
+
+    <div class="game-grid">
+
+        <!-- GAME 01 -->
+        <div class="game-image game-one">
+    <img src="https://snowrider.pro/wp-content/uploads/2024/01/snow-rider-3d.jpg" alt="Snow Rider">
+</div>
+
+
+            <div class="game-info">
+                <h3>Snow Rider</h3>
+                <p>Racing • Adventure</p>
+
+                <button onclick="launchGame('https://snowrider.com/game/')">
+                    PLAY →
+                </button>
+            </div>
+        </div>
+
+
+        <!-- GAME 02 -->
+        <div class="game-card">
+            <div class="game-image game-two">
+                <span>GAME 02</span>
+            </div>
+
+            <div class="game-info">
+                <h3>Ragdoll Archers</h3>
+                <p>Action • Physics</p>
+
+                <button onclick="launchGame('https://ragdollarchers2.io/')">
+                    PLAY →
+                </button>
+            </div>
+        </div>
+
+
+        <!-- GAME 03 -->
+        <div class="game-card">
+            <div class="game-image game-three">
+                <span>GAME 03</span>
+            </div>
+
+            <div class="game-info">
+                <h3>Poxel.io</h3>
+                <p>FPS • Multiplayer</p>
+
+                <button onclick="launchGame('https://www.miniplay.com/embed/poxel-io')">
+                    PLAY →
+                </button>
+            </div>
+        </div>
+
+
+        <!-- GAME 04 -->
+        <div class="game-card">
+            <div class="game-image game-four">
+                <span>GAME 04</span>
+            </div>
+
+            <div class="game-info">
+                <h3>Snake</h3>
+                <p>Arcade • Classic</p>
+
+                <button onclick="launchGame('https://funclicker.com/games/snake/play.html')">
+                    PLAY →
+                </button>
+            </div>
+        </div>
+
+
+        <!-- GAME 05 -->
+        <div class="game-card">
+            <div class="game-image game-five">
+                <span>GAME 05</span>
+            </div>
+
+            <div class="game-info">
+                <h3>Drift Boss</h3>
+                <p>Racing • Driving</p>
+
+                <button onclick="launchGame('https://www.miniplay.com/embed/drift-boss')">
+                    PLAY →
+                </button>
+            </div>
+        </div>
+
+
+        <!-- GAME 06 -->
+        <div class="game-card">
+            <div class="game-image game-six">
+                <span>GAME 06</span>
+            </div>
+
+            <div class="game-info">
+                <h3>Stickman Hook</h3>
+                <p>Action • Physics</p>
+
+                <button onclick="launchGame('https://www.bubbleshooter.net/embed.php?id=1197')">
+                    PLAY →
+                </button>
+            </div>
+        </div>
+
+
+        <!-- GAME 07 -->
+        <div class="game-card">
+            <div class="game-image game-seven">
+                <span>GAME 07</span>
+            </div>
+
+            <div class="game-info">
+                <h3>Geometry Dash</h3>
+                <p>Arcade • Rhythm</p>
+
+                <button onclick="launchGame('https://www.miniplay.com/embed/geometry-dash-lite')">
+    PLAY →
+</button>
+
+            </div>
+        </div>
+
+
+        <!-- GAME 08 -->
+        <div class="game-card">
+            <div class="game-image game-eight">
+                <span>GAME 08</span>
+            </div>
+
+            <div class="game-info">
+                <h3>Slope Run</h3>
+                <p>Action • Runner</p>
+
+                <button onclick="launchGame('https://www.miniplay.com/embed/slope-run')">
+                    PLAY →
+                </button>
+            </div>
+        </div>
+
+
+        <!-- GAME 09 -->
+        <div class="game-card">
+            <div class="game-image game-nine">
+                <span>GAME 09</span>
+            </div>
+
+            <div class="game-info">
+                <h3>Slice It</h3>
+                <p>Arcade • Casual</p>
+
+                <button onclick="launchGame('https://html5.gamemonetize.co/yrswy4d6185wahdcusju86ztjhn6zvem/')">
+                    PLAY →
+                </button>
+            </div>
+        </div>
+
+
+        <!-- GAME 10 -->
+        <div class="game-card">
+            <div class="game-image game-ten">
+                <span>GAME 10</span>
+            </div>
+
+            <div class="game-info">
+                <h3>GunSpin</h3>
+                <p>Action • Physics</p>
+
+                <button onclick="launchGame('https://hapagames.com/game/gunspin.embed')">
+                    PLAY →
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+    </main>
+
+
+    <footer>
+        <p>© 2026 LUXPLAY</p>
+    </footer>
+
+
+  <script>
+    function launchGame(url) {
+        // Open the blank tab immediately from the button click
+        const gameTab = window.open("", "_blank");
+
+        if (!gameTab) {
+            alert("The game tab was blocked. Please allow pop-ups for this site.");
+            return;
+        }
+
+        // Build the blank page
+        const doc = gameTab.document;
+
+        doc.title = "LUXPLAY";
+
+        doc.documentElement.style.cssText = `
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #080808;
+        `;
+
+        doc.body.style.cssText = `
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #080808;
+        `;
+
+        // Create the iframe
+        const iframe = doc.createElement("iframe");
+
+        iframe.src = url;
+        iframe.allowFullscreen = true;
+
+        iframe.setAttribute(
+            "allow",
+            "fullscreen; autoplay; gamepad"
+        );
+
+        iframe.style.cssText = `
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        `;
+
+        doc.body.appendChild(iframe);
+    }
+</script>
+
+
+
+</body>
+</html>
