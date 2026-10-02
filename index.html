@@ -247,6 +247,123 @@ footer {
 }
 
 </style>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600&display=swap');
+
+:root {
+      --ink: #11110f;
+      --paper: #f3f0e9;
+      --muted: #a7a398;
+      --gold: #c4a269;
+      --line: rgba(255,255,255,.12);
+      --panel: #1a1a17;
+}
+
+body {
+      background: var(--ink);
+      color: var(--paper);
+      font-family: 'Manrope', sans-serif;
+      background-image: radial-gradient(circle at 72% 8%, rgba(196,162,105,.12), transparent 26rem), linear-gradient(115deg, #11110f 0%, #151512 55%, #0d0d0c 100%);
+}
+
+header {
+      height: 86px;
+      padding: 0 clamp(24px, 6vw, 96px);
+      border-bottom: 1px solid var(--line);
+      background: rgba(17,17,15,.82);
+      backdrop-filter: blur(18px);
+      position: relative;
+      z-index: 3;
+}
+
+.logo { font-family: 'Manrope', sans-serif; font-size: 17px; letter-spacing: 6px; }
+.logo span { color: var(--gold); }
+nav { gap: 30px; }
+nav a { color: #8d8a82; font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; }
+nav a:hover { color: var(--paper); }
+
+.hero {
+      min-height: 480px;
+      padding: clamp(72px, 11vw, 150px) clamp(24px, 8vw, 128px) 88px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(260px, .7fr);
+      gap: 60px;
+      align-items: end;
+      border-bottom: 1px solid var(--line);
+      position: relative;
+      overflow: hidden;
+}
+
+.hero::after {
+      content: 'L';
+      position: absolute;
+      right: 9vw;
+      top: -70px;
+      font-family: 'Playfair Display', serif;
+      font-size: min(45vw, 620px);
+      line-height: 1;
+      color: rgba(196,162,105,.05);
+      pointer-events: none;
+}
+
+.eyebrow, .section-title p { color: var(--gold); font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; }
+.hero h1 { max-width: 740px; margin-top: 20px; font-family: 'Playfair Display', serif; font-size: clamp(52px, 7vw, 102px); font-weight: 500; line-height: .92; letter-spacing: -2px; position: relative; z-index: 1; }
+.hero h1 em { color: var(--gold); font-style: normal; }
+.hero-copy { max-width: 285px; justify-self: end; color: #8e8b83; font-size: 14px; line-height: 1.8; position: relative; z-index: 1; }
+.hero-copy strong { display: block; margin-bottom: 14px; color: var(--paper); font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 1px; }
+
+.games-section { padding: 86px clamp(24px, 8vw, 128px) 110px; }
+.section-title { display: flex; justify-content: space-between; align-items: end; gap: 25px; }
+.section-title h2 { margin-top: 12px; font-family: 'Playfair Display', serif; font-size: clamp(36px, 4vw, 58px); font-weight: 500; letter-spacing: -1px; }
+.section-count { color: #77746d; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1px; }
+.catalog-tools { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 38px 0 28px; }
+.filter-button, .search-input { height: 39px; border: 1px solid #35342f; background: rgba(255,255,255,.025); color: #96938a; font: 10px 'DM Mono', monospace; letter-spacing: 1px; }
+.filter-button { padding: 0 15px; cursor: pointer; text-transform: uppercase; transition: .25s ease; }
+.filter-button:hover, .filter-button.active { color: var(--ink); border-color: var(--gold); background: var(--gold); }
+.search-input { width: 210px; margin-left: auto; padding: 0 14px; outline: none; }
+.search-input:focus { border-color: var(--gold); }
+.search-input::placeholder { color: #66645e; }
+.game-grid { margin-top: 0; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.game-card { background: var(--panel); border: 1px solid #2c2b27; box-shadow: 0 16px 35px rgba(0,0,0,.14); transition: transform .35s ease, border-color .35s ease, opacity .35s ease; }
+.game-card:hover { transform: translateY(-6px); border-color: var(--gold); box-shadow: 0 22px 55px rgba(0,0,0,.42); }
+.game-card.is-hidden { display: none; }
+.game-image { height: 175px; filter: saturate(.82); }
+.game-info { padding: 18px; }
+.game-info h3 { font-size: 15px; font-weight: 600; letter-spacing: -.2px; }
+.game-info p { margin-top: 7px; color: #77746d; font: 10px 'DM Mono', monospace; letter-spacing: .5px; }
+.game-info button { margin-top: 17px; padding: 11px; color: var(--gold); border-color: #393832; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; }
+.game-info button:hover { color: var(--ink); background: var(--gold); border-color: var(--gold); }
+footer { padding: 30px; border-color: var(--line); color: #5e5c55; font-family: 'DM Mono', monospace; font-size: 9px; }
+
+#luxplayGameScreen { position: fixed; inset: 0; z-index: 999; display: grid; grid-template-rows: 64px 1fr; background: #090908; }
+.game-topbar { display: flex; align-items: center; justify-content: space-between; padding: 0 22px; border-bottom: 1px solid var(--line); background: rgba(17,17,15,.96); }
+.game-topbar-label { color: var(--gold); font: 10px 'DM Mono', monospace; letter-spacing: 2px; text-transform: uppercase; }
+.game-close { border: 1px solid #45433c; padding: 10px 14px; background: transparent; color: var(--paper); cursor: pointer; font: 10px 'DM Mono', monospace; letter-spacing: 1px; }
+.game-close:hover { border-color: var(--gold); color: var(--gold); }
+.game-frame-wrap { position: relative; padding: 18px; }
+.game-frame-wrap iframe { width: 100%; height: 100%; border: 1px solid #292822; background: #000; }
+
+@media (max-width: 1100px) { .game-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 760px) {
+      .hero { min-height: auto; grid-template-columns: 1fr; gap: 38px; padding-top: 80px; }
+      .hero-copy { justify-self: start; }
+      .section-title { align-items: start; flex-direction: column; }
+      .search-input { margin-left: 0; width: 100%; }
+      .game-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .game-image { height: 145px; }
+}
+@media (max-width: 520px) {
+      header { height: 72px; }
+      nav { gap: 13px; }
+      nav a { font-size: 9px; }
+      .hero h1 { font-size: 56px; }
+      .games-section { padding-top: 64px; }
+      .game-grid { grid-template-columns: 1fr; }
+      .game-image { height: 190px; }
+      .filter-button { flex: 1; padding: 0 9px; }
+}
+</style>
 </head>
 
 
@@ -268,12 +385,30 @@ footer {
 
 <main>
 
+<section class="hero">
+      <div>
+            <p class="eyebrow">The private arcade / 2026</p>
+            <h1>Your next<br><em>great escape.</em></h1>
+      </div>
+      <p class="hero-copy"><strong>CURATED PLAY, BEAUTIFULLY PRESENTED</strong>A considered collection of browser games, ready when you are. Choose a title and settle in without leaving the lounge.</p>
+</section>
+
 <section id="games" class="games-section">
 
     <div class="section-title">
         <p>COLLECTION</p>
         <h2>Featured Games</h2>
+            <span class="section-count" id="gameCount">22 TITLES</span>
     </div>
+
+      <div class="catalog-tools" aria-label="Game filters">
+            <button class="filter-button active" data-filter="all">All titles</button>
+            <button class="filter-button" data-filter="action">Action</button>
+            <button class="filter-button" data-filter="racing">Racing</button>
+            <button class="filter-button" data-filter="arcade">Arcade</button>
+            <button class="filter-button" data-filter="sports">Sports</button>
+            <input class="search-input" id="gameSearch" type="search" placeholder="Search collection..." aria-label="Search games">
+      </div>
 
 
     <div class="game-grid">
@@ -1598,7 +1733,7 @@ FUNNY SHOOTER 2
 <h3>Funny Shooter 2</h3>
 <p>FPS • Action</p>
 
-<button onclick="launchGame('https://www.miniplay.com/')">
+<button onclick="launchGame('https://funnyshooter.net/')">
 PLAY →
 </button>
 </div>
@@ -1607,7 +1742,56 @@ PLAY →
 
 
 <!-- =====================================================
-     21 BASKET BROS
+     21 LEVEL DEVIL
+===================================================== -->
+
+<div class="game-card">
+
+<div class="game-image">
+
+<svg viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg">
+
+<defs>
+<linearGradient id="levelDevil" x1="0" y1="0" x2="1" y2="1">
+<stop stop-color="#30205f"/>
+<stop offset="1" stop-color="#0b1026"/>
+</linearGradient>
+</defs>
+
+<rect width="900" height="500" fill="url(#levelDevil)"/>
+
+<path d="M80 390 H820" stroke="#d7b96f" stroke-width="8"/>
+<path d="M150 390 L190 310 L230 390 M610 390 L650 310 L690 390"
+      fill="none" stroke="#f05b70" stroke-width="12"/>
+
+<circle cx="450" cy="225" r="68" fill="#e0b48a"/>
+<path d="M385 190 Q450 130 515 190 L495 155 L470 182 L440 145 L415 180 Z"
+      fill="#f05b70"/>
+<circle cx="425" cy="225" r="9" fill="#171326"/>
+<circle cx="475" cy="225" r="9" fill="#171326"/>
+<path d="M425 260 Q450 278 475 260" fill="none" stroke="#171326" stroke-width="7"/>
+
+<text x="450" y="75" text-anchor="middle" fill="#fff"
+      font-size="58" font-weight="900" font-family="Arial">LEVEL DEVIL</text>
+
+</svg>
+
+</div>
+
+<div class="game-info">
+<h3>Level Devil</h3>
+<p>Platformer • Challenge</p>
+
+<button onclick="launchGame('https://www.miniplay.com/game/level-devil-2')">
+PLAY →
+</button>
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     22 BASKET BROS
 ===================================================== -->
 
 <div class="game-card">
@@ -1715,76 +1899,59 @@ PLAY →
 
 
 <script>
+const cards = [...document.querySelectorAll('.game-card')];
+const filterButtons = [...document.querySelectorAll('.filter-button')];
+const searchInput = document.querySelector('#gameSearch');
+const gameCount = document.querySelector('#gameCount');
+let activeFilter = 'all';
 
-function launchGame(url) {
+function updateCatalog() {
+      const query = searchInput.value.trim().toLowerCase();
+      let visibleCount = 0;
 
-    const gameTab = window.open("", "_blank");
+      cards.forEach(card => {
+            const title = card.querySelector('h3').textContent.toLowerCase();
+            const category = card.querySelector('p').textContent.toLowerCase();
+            const matchesFilter = activeFilter === 'all' || category.includes(activeFilter);
+            const matchesSearch = !query || title.includes(query) || category.includes(query);
+            const visible = matchesFilter && matchesSearch;
+            card.classList.toggle('is-hidden', !visible);
+            if (visible) visibleCount += 1;
+      });
 
-    if (!gameTab) {
-
-        alert(
-            "The game tab was blocked. Please allow pop-ups for this site."
-        );
-
-        return;
-    }
-
-
-    const doc = gameTab.document;
-
-
-    doc.title = "LUXPLAY";
-
-
-    doc.documentElement.style.cssText = `
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        background: #080808;
-    `;
-
-
-    doc.body.style.cssText = `
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        background: #080808;
-    `;
-
-
-    const iframe = doc.createElement("iframe");
-
-
-    iframe.src = url;
-
-
-    iframe.allowFullscreen = true;
-
-
-    iframe.setAttribute(
-        "allow",
-        "fullscreen; autoplay; gamepad"
-    );
-
-
-    iframe.style.cssText = `
-        width: 100%;
-        height: 100%;
-        border: none;
-        display: block;
-        background: #080808;
-    `;
-
-
-    doc.body.appendChild(iframe);
-
+      gameCount.textContent = `${visibleCount} ${visibleCount === 1 ? 'TITLE' : 'TITLES'}`;
 }
 
+filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+            activeFilter = button.dataset.filter;
+            filterButtons.forEach(item => item.classList.toggle('active', item === button));
+            updateCatalog();
+      });
+});
+
+searchInput.addEventListener('input', updateCatalog);
+
+function launchGame(url) {
+      const sourceButton = document.activeElement;
+      const card = sourceButton && sourceButton.closest('.game-card');
+      const title = card ? card.querySelector('h3').textContent : 'Selected game';
+      const gameScreen = document.createElement('div');
+      gameScreen.id = 'luxplayGameScreen';
+      gameScreen.innerHTML = `
+            <div class="game-topbar">
+                  <span class="game-topbar-label">LUXPLAY / ${title}</span>
+                  <button class="game-close" type="button">Exit lounge</button>
+            </div>
+            <div class="game-frame-wrap">
+                  <iframe src="${url}" title="${title}" allowfullscreen allow="fullscreen; autoplay; gamepad"></iframe>
+            </div>`;
+
+      gameScreen.querySelector('.game-close').addEventListener('click', () => gameScreen.remove());
+      document.body.appendChild(gameScreen);
+}
 </script>
+
 
 
 </body>
