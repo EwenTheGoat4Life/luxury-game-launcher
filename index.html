@@ -339,8 +339,11 @@ footer { padding: 30px; border-color: var(--line); color: #5e5c55; font-family: 
 #luxplayGameScreen { position: fixed; inset: 0; z-index: 999; display: grid; grid-template-rows: 64px 1fr; background: #090908; }
 .game-topbar { display: flex; align-items: center; justify-content: space-between; padding: 0 22px; border-bottom: 1px solid var(--line); background: rgba(17,17,15,.96); }
 .game-topbar-label { color: var(--gold); font: 10px 'DM Mono', monospace; letter-spacing: 2px; text-transform: uppercase; }
+.game-actions { display: flex; gap: 9px; align-items: center; }
 .game-close { border: 1px solid #45433c; padding: 10px 14px; background: transparent; color: var(--paper); cursor: pointer; font: 10px 'DM Mono', monospace; letter-spacing: 1px; }
 .game-close:hover { border-color: var(--gold); color: var(--gold); }
+.game-direct { border: 1px solid var(--gold); padding: 10px 14px; background: var(--gold); color: var(--ink); cursor: pointer; font: 10px 'DM Mono', monospace; letter-spacing: 1px; }
+.game-direct:hover { background: transparent; color: var(--gold); }
 .game-frame-wrap { position: relative; padding: 18px; }
 .game-frame-wrap iframe { width: 100%; height: 100%; border: 1px solid #292822; background: #000; }
 
@@ -1941,12 +1944,18 @@ function launchGame(url) {
       gameScreen.innerHTML = `
             <div class="game-topbar">
                   <span class="game-topbar-label">LUXPLAY / ${title}</span>
-                  <button class="game-close" type="button">Exit lounge</button>
+                  <div class="game-actions">
+                        <button class="game-direct" type="button">Open directly</button>
+                        <button class="game-close" type="button">Exit lounge</button>
+                  </div>
             </div>
             <div class="game-frame-wrap">
                   <iframe src="${url}" title="${title}" allowfullscreen allow="fullscreen; autoplay; gamepad"></iframe>
             </div>`;
 
+      gameScreen.querySelector('.game-direct').addEventListener('click', () => {
+            window.open(url, '_blank', 'noopener,noreferrer');
+      });
       gameScreen.querySelector('.game-close').addEventListener('click', () => gameScreen.remove());
       document.body.appendChild(gameScreen);
 }
